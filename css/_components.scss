@@ -1,0 +1,223 @@
+/** Map...
+1. BUTTON
+2. SERVICE
+3. RESOURCE
+4. HEADER
+5.
+6.
+**/
+
+/*** BUTTON ***/
+
+.button {
+    display: flex;
+    width: 25rem;
+    background: linear-gradient(to top, rgba(#233649, 0.9), rgba(#233649, 0.9));;
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+    color: var(--white-color);
+
+    &__text {
+        flex: 0 0 70%; 
+    }
+
+    &__text-title, &__text-subtitle {
+        display: block;
+    }
+
+    &__text-title {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    &__text-subtitle {
+        font-size: 1.3rem;
+    }
+
+    &__btn {
+        flex: 0 0 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__cta {
+        display: block;
+        border-radius: 50%;
+        background: var(--secondary-color);
+        box-shadow: 0 0 0.3rem var(--white-color);
+        text-decoration: none;
+        color: var(--white-color);
+        font-size: 3rem;
+        line-height: 3rem;
+        text-align: center;
+        padding: 1rem;
+        transform: scaleX(1);
+        transition: all .4s ease;
+    }
+
+    &__cta:hover {
+        color: var(--primary-color);
+        transform: scaleX(1.2);
+    }
+}
+
+/*** SERVICE ***/
+
+.service {
+    width: 300px;
+    background: red;
+    height: 650px;
+    border-radius: 150px 150px 150px 150px;
+    border: 10px solid var(--secondary-color);
+    background: var(--light-color);
+    box-shadow: 0 .5rem 2rem var(--secondary-color);
+    
+    &__img {
+        height: 280px;
+        width: 280px;
+        background-color: var(--white-color);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            width: 95%;
+        }
+    }
+
+    &__head {
+        width: 85%;
+        height: 25%;
+        margin: 0 auto;
+        margin-top: -35%;
+        border: 3px solid var(--secondary-color);
+        text-align: center;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        border-radius: 25px;
+    }
+
+    &__title {
+        color: var(--secondary-color);
+        padding: 1rem;
+    }
+
+    &__body {
+        padding: 4rem;
+        color: var(--secondary-color);
+        font-size: 1.5rem;
+        height: 30%;
+    }
+
+    &__cta-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__cta {
+        display: inline-block;
+        border: 1px solid var(--secondary-color);
+        text-decoration: none;
+        padding: 1rem 2rem;
+        color: var(--secondary-color);
+        border-radius: 100px;
+        text-transform: uppercase;
+        font-size: 1.7rem;
+    }
+}
+
+/*** RESOURCE ***/
+
+.resource {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    transform: scale(1);
+    transition: transform .4s ease;
+    background-color: var(--primary-color);
+    background-blend-mode: multiply;
+
+    &-1 {
+        grid-column: 1/4;
+        grid-row: 1/3;
+        background-image: url('../images/pexels-photo-2049411.jpeg');
+    }
+
+    &-2 {
+        grid-column: 4/-1;
+        grid-row: 1/2;
+        background-image: url('../images/pexels-photo-2049411.jpeg');
+    }
+
+    &-3 {
+        grid-column: 4/-1;
+        grid-row: 2/-1;
+        background-image: url('../images/pexels-photo-2049411.jpeg');
+    }
+
+    &-4 {
+        grid-column: 1/4;
+        grid-row: 3/-1;
+        background-image: url('../images/pexels-photo-2049411.jpeg');
+    }
+
+    &__title {
+        background: var(--white-color);
+        padding: 2rem;
+        display: block;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: var(--secondary-color);
+        transition: all .4s ease;
+    }
+
+    &:hover {
+        transform: scale(1.05);
+        z-index: 1;
+    }
+}
+
+/*** HEADER ***/
+
+.header {
+    width: 100%;
+    height: var(--header-height);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: var(--light-color);
+    box-shadow: 0 3px 1rem var(--secondary-color);
+
+    &.sticky {
+        position: fixed;
+        z-index: 999;
+    }
+
+    &__bar {
+        display: flex;
+        justify-content: flex-end;
+        padding: 1rem;
+
+        & > a {
+            display: inline-block;
+            font-size: 1.4rem;
+            text-decoration: none;
+            align-self: center;
+            color: #808080;
+        }
+    }
+
+    &__bar-divider {
+        background: #808080;
+        width: 2px;
+        margin: auto 1rem;
+        height: 1rem;
+    }
+}
+
