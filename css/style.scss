@@ -48,6 +48,7 @@ body {
     justify-content: space-between;
     background: var(--white-color);
     padding: 0 3rem;
+    position: relative;
 
     &__brand {
         justify-self: center;
@@ -64,6 +65,17 @@ body {
         flex-flow: wrap;
         align-items: center;
         align-content: center;
+        background: var(--white-color);
+
+        &.active {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 100%;
+            left:0;
+            background: var(--white-color);
+            width:100%;
+        }
 
         @media(max-width: $medium) {
             display: none;
@@ -79,6 +91,68 @@ body {
 
         li a:hover {
             color: var(--primary-color);
+        }
+    }
+
+    &__toggler {
+        //align-self: center;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        transition: all 1s ease;
+        display:none;
+
+        @media(max-width: $medium) {
+            display: flex;
+        }
+
+        &:hover {
+            opacity: 0.5;
+        }
+
+        &.active {
+
+            .bar {
+                background: transparent;
+                transition: all .3s ease;
+            }
+            
+            .bar::before {
+                transform: rotate(60deg);
+                top:0;
+            }
+
+            .bar::after {
+                transform: rotate(-60deg);
+                top: 0;
+            }
+
+        }
+        
+        .bar {
+            display: block;
+            height: 3px;
+            width: 40px;
+            background: var(--secondary-color);
+            position: relative;
+        }
+
+       .bar::before, .bar::after {
+            content: '';
+            display: block;
+            height: 3px;
+            width: 40px;
+            background: var(--secondary-color);
+            position: absolute;
+            transform: rotate(o);
+        }
+
+        .bar::before {
+            top: -10px;
+        }
+
+        .bar::after {
+            top: 10px;
         }
     }
 
